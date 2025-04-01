@@ -12,8 +12,8 @@ function App() {
       <SiteHeader />
         <Routes>
           <Route exact path="/" element={<Homepage />} />
-          <Route exact path="/articles/:id" element={<ArticleDetails />} />
-          <Route exact path="/category/:id" element={<Category />} />
+          <Route path="/articles/:id" element={<ArticleDetails />} />
+          <Route path="/categories/:id" element={<Category />} />
         </Routes>
       
     </div>
