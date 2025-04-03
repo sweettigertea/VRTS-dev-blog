@@ -3,13 +3,13 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Homepage from './pages/Homepage';
 import ArticleDetails from './pages/ArticleDetails';
 import Category from './pages/Category';
-import SiteHeader from './components/SiteHeader';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <Router>
     <div className="App">
-      <SiteHeader />
+      <Navbar />
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/articles/:id" element={<ArticleDetails />} />

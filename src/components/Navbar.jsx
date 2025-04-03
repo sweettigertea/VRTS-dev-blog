@@ -1,12 +1,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const SiteHeader = () => {
+const Navbar = () => {
   return (
-    <div className='site-header'>
+    <div>
       <Link to="/"><h1>SweetTigerTea's DevBlog</h1></Link>
     </div>
   )
 }
 
-export default SiteHeader
+export default Navbar
