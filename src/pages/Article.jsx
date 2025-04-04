@@ -41,7 +41,7 @@ const Article = () => {
 
       let article = articles.filter(article=> article.id==id)
       article = article[0]
-      console.log(article)
+      // console.log(article)
 
   return (
     <div className='w-full pb-10 bg-[#f9f9f9]'>

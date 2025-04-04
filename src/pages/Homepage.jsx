@@ -2,8 +2,9 @@ import React from "react";
 import {Link} from "react-router-dom";
 import { imgPlaceholder } from "../assets/exportAssets";
 
-export default function Homepage() {
-
+export default function Homepage({ArticlesTest}) {
+    console.log("Homepage")
+    console.log(ArticlesTest)
     const articles=[
         {
             'id':1,
