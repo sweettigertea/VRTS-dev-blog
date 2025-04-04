@@ -1,7 +1,10 @@
 import React from 'react'
 import { imgPlaceholder } from "../assets/exportAssets";
+import { useParams } from 'react-router-dom';
 
 const Article = () => {
+
+  const {id}=useParams()
 
   const article = {
     'id':1,
@@ -30,7 +33,7 @@ const Article = () => {
           </div>
           <div className='col-span-2 gap-2'>
             <img src={article.coverImg} alt="Image Cover Placeholder" className='h-56 w-full object-cover bg-gray-300'/>
-            <h1 className='font-bold text-2xl my-1 pt-5'>{article.title}</h1>
+            <h1 className='font-bold text-2xl my-1 pt-5'>{article.title} {id}</h1>
             <div className='pt-2'>
               <p>{article.contents}</p>
             </div>
