@@ -4,6 +4,7 @@ import Homepage from './pages/Homepage';
 import Article from './pages/Article';
 import Category from './pages/Category';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/articles/:id" element={<Article />} />
           <Route path="/categories/:id" element={<Category />} />
         </Routes>
+      <Footer/>
     </div>
     </Router>
   );

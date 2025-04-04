@@ -7,7 +7,7 @@ function Navbar() {
   const handleClick = ()=>setToggleMenuOpen(!toggleMenuOpen)
 
   return (
-    <div className='w-screen h-[60px] bg-white drop-shadow-lg relative'>
+    <div className='w-full h-[60px] bg-white drop-shadow-lg relative'>
       <div className='flex justify-between items-center w-full h-full md:max-w-[1240px] m-auto'>
         <div>
           <Link to="/"><h1 className='ml-3 w-full'>SweetTigerTea's DevBlog</h1></Link>
