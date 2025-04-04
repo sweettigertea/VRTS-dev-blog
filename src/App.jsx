@@ -1,10 +1,6 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-
-import Homepage from './pages/Homepage';
-import Article from './pages/Article';
-import Category from './pages/Category';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import {Navbar, Footer} from './components/exportComponents';
+import { Homepage, Article, Category } from './pages/exportPages';
 
 function App() {
   return (
