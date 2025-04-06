@@ -70,7 +70,7 @@ const Article = ({ArticlesTest}) => {
             <img src={'http://172.27.72.25:1337'+ article.cover.url} alt="Image Cover Placeholderrr" className='h-56 w-full object-cover bg-gray-300'/>
             <h1 className='font-bold text-2xl my-1 pt-5'>{article.title} {id}</h1>
             <div className='pt-2'>
-              <p>{article.blocks.body}</p>
+              <p>{article.description}</p>
             </div>
           </div>
         </div>        
