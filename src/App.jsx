@@ -15,7 +15,7 @@ function App() {
       <Navbar />
         <Routes>
           <Route exact path="/" element={<Homepage ArticlesTest={data?data:'nullarino'}/>} />
-          <Route path="/articles/:id" element={<Article />} />
+          <Route path="/articles/:id" element={<Article ArticlesTest={data?data:'nullarino'}/>} />
           <Route path="/categories/:id" element={<Category />} />
         </Routes>
       <Footer/>
