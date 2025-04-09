@@ -1,6 +1,7 @@
 import React from 'react'
 import { imgPlaceholder } from "../assets/exportAssets";
 import { useParams } from 'react-router-dom';
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 const Article = ({ArticlesTest}) => {
   
@@ -16,6 +17,13 @@ const Article = ({ArticlesTest}) => {
   console.log('Article Details')
   
   console.log(article)
+
+  const content = [
+    {
+      type: 'paragraph',
+      children: [{ type: 'text', text: 'A simple paragraph' }],
+    },
+  ];
 
   // const articles=[
   //        {
@@ -70,7 +78,7 @@ const Article = ({ArticlesTest}) => {
             <img src={'http://172.27.72.25:1337'+ article.cover.url} alt="Image Cover Placeholderrr" className='h-56 w-full object-cover bg-gray-300'/>
             <h1 className='font-bold text-2xl my-1 pt-5'>{article.title} {id}</h1>
             <div className='pt-2'>
-              <p>{article.description}</p>
+              <BlocksRenderer let content={content} />
             </div>
           </div>
         </div>        
