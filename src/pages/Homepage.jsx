@@ -36,7 +36,6 @@ export default function Homepage({ArticlesTest}) {
     //         'authorImg':imgPlaceholder,
     //         'authorDesc':'Author Description',
     //     },
-
     // ]
 
 

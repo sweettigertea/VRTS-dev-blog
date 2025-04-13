@@ -8,6 +8,7 @@ function App() {
   let {loading, error, data} = useFetch('http://172.27.72.25:1337/api/articles?populate=*')
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Errorrr...</p>;
+  if (!data) return null;
   
   return (
     <Router>
