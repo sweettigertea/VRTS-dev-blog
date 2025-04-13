@@ -1,10 +1,42 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import { useQuery, gql } from "@apollo/client";
 // import { imgPlaceholder } from "../assets/exportAssets";
 
-export default function Homepage({ArticlesTest}) {
+const GET_ARTICLES = gql`
+  query GetArticles {
+  articles {
+    documentId,
+    slug,
+    title,
+    description,
+    cover {
+      url
+    }
+     author {
+      name,
+      avatar {
+        url
+      }
+      description
+    }
+    content
+  }
+}
+`;
+
+export default function Homepage() {
+    const { loading, error, data } = useQuery(GET_ARTICLES);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Errorrr...</p>;
+    if (!data) return null;
+
     console.log("Homepage")
-    console.log(ArticlesTest)
+    // console.log(ArticlesTest)
+
+    console.log('gql')
+    console.log(data.articles)
     // const articles=[
     //     {
     //         'id':1,
@@ -46,12 +78,12 @@ export default function Homepage({ArticlesTest}) {
                     <h1>User's Blog Card</h1>
                 </div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 text-black">
-                    {ArticlesTest.data.map((article)=>
-                        <Link key={article.id} to={`/articles/${article.id}`}>
+                    {data.articles.map((article)=>
+                        <Link key={article.documentId} to={`/articles/${article.documentId}`}>
                             <div className="bg-white rounded-xl overflow-hidden drop-shadow-md">
                             <img src={'http://172.27.72.25:1337'+ article.cover.url} alt='Image Placeholdersss' className="h-56 w-full object-cover"/>
                                 <div className="p-8">
-                                    <h3 className="font-bold text-2xl my-1">{article.title} {article.id}</h3>
+                                    <h3 className="font-bold text-2xl my-1">{article.title} {article.documentId}</h3>
                                     <p className="text-gray-600 text-xl">{article.description}</p>
                                     <div className="flex">
                                         <span className="font-semibold">{article.author.name}</span>
