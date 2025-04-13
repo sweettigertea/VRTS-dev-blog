@@ -42,6 +42,9 @@ export default function Homepage({ArticlesTest}) {
     return (
         <div className='w-full bg-[#f9f9f9] py-[50px]'>
             <div className='max-w-[1240px] mx-auto'>
+                <div className="border-4 m-4 rounded-md bg-gray-300">
+                    <h1>User's Blog Card</h1>
+                </div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 text-black">
                     {ArticlesTest.data.map((article)=>
                         <Link key={article.id} to={`/articles/${article.id}`}>
@@ -50,6 +53,10 @@ export default function Homepage({ArticlesTest}) {
                                 <div className="p-8">
                                     <h3 className="font-bold text-2xl my-1">{article.title} {article.id}</h3>
                                     <p className="text-gray-600 text-xl">{article.description}</p>
+                                    <div className="flex">
+                                        <span className="font-semibold">{article.author.name}</span>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </Link>
