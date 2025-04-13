@@ -39,14 +39,15 @@
       "target": "api::author.author",
       "inversedBy": "articles"
     },
-    "category": {
+    "content": {
+      "type": "blocks",
+      "required": true
+    },
+    "categories": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "articles"
-    },
-    "content": {
-      "type": "blocks"
     }
   }
 }
