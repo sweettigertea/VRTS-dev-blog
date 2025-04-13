@@ -34,8 +34,7 @@ export default function Homepage() {
 
     console.log("Homepage")
     // console.log(ArticlesTest)
-
-    console.log('gql')
+    // console.log('gql')
     console.log(data.articles)
     // const articles=[
     //     {

@@ -16,6 +16,7 @@ query GetArticle($documentId: ID!) {
     }
      author {
       name,
+      email,
       avatar {
         url
       }
@@ -45,9 +46,8 @@ const Article = () => {
   //   article={}
   // }
   
-  const article = data.article;
+  let article = data.article
   console.log('Article Details')
-  
   console.log(article)
 
   // const content = [
@@ -98,20 +98,20 @@ const Article = () => {
         <div className='grid lg:grid-cols-3 md:gap-4 p-2'>
           <div className='col-span-3 p-1 bg-white rounded-xl'>
             <img src={imgPlaceholder} alt="Author Image" />
-            <h1>{data.article.author.name}</h1>
+            <h1>{article.author.name}</h1>
             <div>
-              {data.article.author.email}
+              {article.author.email}
             </div>
           </div>
           <div className='col-span-3 lg:col-span-1 bg-white rounded-xl overflow-hidden drop-shadow-md pl-5 pt-5'>
             Index Outline
           </div>
           <div className='col-span-2 gap-2'>
-            <img src={'http://172.27.72.25:1337'+ data.article.cover.url} alt="Image Cover Placeholderrr" className='h-56 w-full object-cover bg-gray-300'/>
-            <h1 className='font-bold text-2xl my-1 pt-5'>{data.article.title} {documentId}</h1>
+            <img src={'http://172.27.72.25:1337'+ article.cover.url} alt="Image Cover Placeholderrr" className='h-56 w-full object-cover bg-gray-300'/>
+            <h1 className='font-bold text-2xl my-1 pt-5'>{article.title} {documentId}</h1>
             <div className='pt-2 prose mx-auto my-10'>
               {/* <BlocksRenderer let content={content} /> */}
-              <BlocksRenderer let content={data.article.content} />
+              <BlocksRenderer let content={article.content} />
             </div>
           </div>
         </div>        
