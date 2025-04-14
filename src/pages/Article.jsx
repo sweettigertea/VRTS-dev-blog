@@ -103,7 +103,7 @@ const Article = () => {
               {article.author.email}
             </div>
           </div>
-          <div className='col-span-3 lg:col-span-1 bg-white rounded-xl overflow-hidden drop-shadow-md pl-5 pt-5'>
+          <div className='col-span-3 lg:order-last lg:col-span-1 bg-white rounded-xl overflow-hidden drop-shadow-md pl-5 pt-5'>
             Index Outline
           </div>
           <div className='col-span-2 gap-2'>

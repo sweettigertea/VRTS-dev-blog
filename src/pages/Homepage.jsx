@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-// import { imgPlaceholder } from "../assets/exportAssets";
+import { imgPlaceholder } from "../assets/exportAssets";
 
 const GET_ARTICLES = gql`
   query GetArticles {
@@ -73,26 +73,40 @@ export default function Homepage() {
     return (
         <div className='w-full bg-[#f9f9f9] py-[50px]'>
             <div className='max-w-[1240px] mx-auto'>
-                <div className="border-4 m-4 rounded-md bg-gray-300">
-                    <h1>User's Blog Card</h1>
+                <div className="m-4 rounded-xl bg-gray-300 flex flex-wrap justify-between">
+                    <div className="p-4 order-last lg:order-first">
+                        <h1 className="mt-4 text-4xl">
+                            SweetTigerTea's DevBlog
+                        </h1>
+                        <p className="mt-4">Welcome to SweetTigerTea's blog. Find the latest news, articles, and tips from our team.</p>
+                    </div>
+                    <div>
+                        <img src={imgPlaceholder} alt="User Profile Picture" className="p-4 size-80 order-first lg:order-last"/>
+                    </div>
                 </div>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 text-black">
-                    {data.articles.map((article)=>
-                        <Link key={article.documentId} to={`/articles/${article.documentId}`}>
-                            <div className="bg-white rounded-xl overflow-hidden drop-shadow-md">
-                            <img src={'http://172.27.72.25:1337'+ article.cover.url} alt='Image Placeholdersss' className="h-56 w-full object-cover"/>
-                                <div className="p-8">
-                                    <h3 className="font-bold text-2xl my-1">{article.title} {article.documentId}</h3>
-                                    <p className="text-gray-600 text-xl">{article.description}</p>
-                                    <div className="flex">
-                                        <span className="font-semibold">{article.author.name}</span>
+                <div className="m-4 p-2 rounded-xl bg-gray-300">
+                    <div className="p-4 flex justify-between">
+                        <h2 className="text-3xl">Recent</h2>
+                        <p>Sort by: Category</p>
+                    </div>
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 text-black">
+                        {data.articles.map((article)=>
+                            <Link key={article.documentId} to={`/articles/${article.documentId}`}>
+                                <div className="bg-white rounded-xl overflow-hidden drop-shadow-md">
+                                    <img src={'http://172.27.72.25:1337'+ article.cover.url} alt='Image Placeholdersss' className="h-56 w-full object-cover"/>
+                                    <div className="p-8">
+                                        <h3 className="font-bold text-2xl my-1">{article.title} {article.documentId}</h3>
+                                        <p className="text-gray-600 text-xl">{article.description}</p>
+                                        <div className="flex">
+                                            <span className="font-semibold">{article.author.name}</span>
+                                        </div>
                                     </div>
-                                    
                                 </div>
-                            </div>
-                        </Link>
-                    )}
+                            </Link>
+                        )}
+                    </div>
                 </div>
+                
             </div>
         </div>
     );
