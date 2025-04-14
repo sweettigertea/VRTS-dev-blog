@@ -95,7 +95,7 @@ export default function Homepage() {
                                 <div className="bg-white rounded-xl overflow-hidden drop-shadow-md">
                                     <img src={'http://172.27.72.25:1337'+ article.cover.url} alt='Image Placeholdersss' className="h-56 w-full object-cover"/>
                                     <div className="p-8">
-                                        <h3 className="font-bold text-2xl my-1">{article.title} {article.documentId}</h3>
+                                        <h3 className="font-bold text-2xl my-1">{article.title}</h3>
                                         <p className="text-gray-600 text-xl">{article.description}</p>
                                         <div className="flex">
                                             <span className="font-semibold">{article.author.name}</span>
