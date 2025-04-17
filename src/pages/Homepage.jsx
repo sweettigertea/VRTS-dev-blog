@@ -70,30 +70,30 @@ export default function Homepage() {
   // ]
 
   return (
-    <div className="h-full bg-[#f9f9f9] py-[50px]">
-      <div className="max-w-[1240px] mx-auto">
-        <div className="m-4 rounded-xl bg-gray-300 flex flex-wrap justify-between">
-          <div className="p-4 order-last lg:order-first">
-            <h1 className="mt-4 text-4xl">SweetTigerTea's DevBlog</h1>
+    <div className="h-full bg-[#f9f9f9] py-[20px]">
+      <div className="max-w-[1240px] mx-auto p-4 flex flex-col space-y-6">
+        <div className="flex flex-col items-center rounded-xl bg-gray-300 p-4 space-y-6 wrap-anywhere">
+          <div>
+            <img
+              src={imgPlaceholder}
+              alt="User Profile Picture"
+              className="h-60 rounded-xl"
+            />
+          </div>
+          <div>
+            <h1 className="text-4xl">SweetTigerTea's DevBlog</h1>
             <p className="mt-4">
               Welcome to SweetTigerTea's blog. Find the latest news, articles,
               and tips from our team.
             </p>
           </div>
-          <div>
-            <img
-              src={imgPlaceholder}
-              alt="User Profile Picture"
-              className="p-4 size-80 order-first lg:order-last"
-            />
-          </div>
         </div>
-        <div className="m-4 p-2 rounded-xl bg-gray-300">
-          <div className="p-4 flex justify-between">
+        <div className="relative rounded-xl bg-gray-300 px-4 wrap-anywhere">
+          <div className="flex justify-between py-4">
             <h2 className="text-3xl">Recent</h2>
             <p>Sort by: Category</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 text-black">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-black">
             {data.articles.map((article) => (
               <Link
                 key={article.documentId}
