@@ -1,42 +1,41 @@
-import React from 'react'
+import React from "react";
 import { imgPlaceholder } from "../assets/exportAssets";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
 const GET_ARTICLE = gql`
-query GetArticle($documentId: ID!) {
-  article(documentId: $documentId) {
-    documentId,
-    slug,
-    title,
-    description,
-    cover {
-      url
-    }
-     author {
-      name,
-      email,
-      avatar {
+  query GetArticle($documentId: ID!) {
+    article(documentId: $documentId) {
+      documentId
+      slug
+      title
+      description
+      cover {
         url
       }
-      description
+      author {
+        name
+        email
+        avatar {
+          url
+        }
+        description
+      }
+      content
     }
-    content
   }
-}
 `;
 
 const Article = () => {
-  
-  const {documentId}=useParams()
+  const { documentId } = useParams();
   const { loading, error, data } = useQuery(GET_ARTICLE, {
-    variables: { documentId: documentId }
+    variables: { documentId: documentId },
   });
-  
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Errorrr...</p>;
-    if (!data) return null;
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Errorrr...</p>;
+  if (!data) return null;
 
   // let article={}
   // if(article){
@@ -45,10 +44,10 @@ const Article = () => {
   // } else {
   //   article={}
   // }
-  
-  let article = data.article
-  console.log('Article Details')
-  console.log(article)
+
+  let article = data.article;
+  console.log("Article Details");
+  console.log(article);
 
   // const content = [
   //   {
@@ -91,33 +90,35 @@ const Article = () => {
   //     ]
 
   return (
-    
-    <div className='w-full pb-10 bg-[#f9f9f9]'>
-      <div className='max-w-[1240px] mx-auto pt-4'>
-
-        <div className='grid lg:grid-cols-3 md:gap-4 p-2'>
-          <div className='col-span-3 p-1 bg-white rounded-xl'>
+    <div className="w-full pb-10 bg-[#f9f9f9]">
+      <div className="max-w-[1240px] mx-auto pt-4">
+        <div className="grid lg:grid-cols-3 md:gap-4 p-2">
+          <div className="col-span-3 p-1 bg-white rounded-xl">
             <img src={imgPlaceholder} alt="Author Image" />
             <h1>{article.author.name}</h1>
-            <div>
-              {article.author.email}
-            </div>
+            <div>{article.author.email}</div>
           </div>
-          <div className='col-span-3 lg:order-last lg:col-span-1 bg-white rounded-xl overflow-hidden drop-shadow-md pl-5 pt-5'>
+          <div className="col-span-3 lg:order-last lg:col-span-1 bg-white rounded-xl overflow-hidden drop-shadow-md pl-5 pt-5">
             Index Outline
           </div>
-          <div className='col-span-2 gap-2'>
-            <img src={'http://172.27.72.25:1337'+ article.cover.url} alt="Image Cover Placeholderrr" className='h-56 w-full object-cover bg-gray-300'/>
-            <h1 className='font-bold text-2xl my-1 pt-5'>{article.title} {documentId}</h1>
-            <div className='pt-2 prose mx-auto my-10'>
+          <div className="col-span-2 gap-2">
+            <img
+              src={"http://172.27.72.25:1337" + article.cover.url}
+              alt="Image Cover Placeholderrr"
+              className="h-56 w-full object-cover bg-gray-300"
+            />
+            <h1 className="font-bold text-2xl my-1 pt-5">
+              {article.title} {documentId}
+            </h1>
+            <div className="pt-2 prose mx-auto my-10">
               {/* <BlocksRenderer let content={content} /> */}
               <BlocksRenderer let content={article.content} />
             </div>
           </div>
-        </div>        
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Article
+export default Article;
