@@ -7,8 +7,8 @@ function Navbar() {
   const handleClick = () => setToggleMenuOpen(!toggleMenuOpen);
 
   return (
-    <div className="w-full h-[60px] bg-white drop-shadow-lg relative">
-      <div className="flex justify-between items-center w-full h-full md:max-w-[1240px] m-auto">
+    <div className="bg-white drop-shadow-lg relative">
+      <div className="max-w-screen-xl flex flex-wrap justify-between items-center w-full h-full mx-auto p-3">
         <div>
           <Link to="/">
             <h1 className="ml-3 w-full">SweetTigerTea's DevBlog</h1>
@@ -30,27 +30,23 @@ function Navbar() {
         <div className="md:hidden" onClick={handleClick}>
           <img
             src={!toggleMenuOpen ? menu : close}
-            alt="Menu Bar"
-            className="h-[30px] p-1 object-contain mr-3"
+            alt="Menu Icon"
+            className="h-[25px]"
           />
         </div>
       </div>
       <div>
         <ul
-          className={
+          className= { 
             toggleMenuOpen
-              ? "absolute bg-white w-full px-3 md:hidden"
+              ? "absolute flex space-y-2 flex-col items-end bg-white w-full px-4 md:hidden"
               : "hidden"
           }
         >
-          <div className="flex">
-            <li className="mr-2">Categories</li>
-            <li>Search</li>
-          </div>
-          <div className="flex my-2">
-            <img src={github} alt="Github Logo" className="h-[30px] p-1" />
-            <img src={linkedin} alt="LinkedIn Logo" className="h-[30px] p-1" />
-          </div>
+          <li>Categories</li>
+          <li>Search</li>
+          <img src={github} alt="Github Logo" className="h-[30px] p-1" />
+          <img src={linkedin} alt="LinkedIn Logo" className="h-[30px] p-1" />
         </ul>
       </div>
     </div>

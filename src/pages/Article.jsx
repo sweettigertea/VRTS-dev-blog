@@ -90,27 +90,27 @@ const Article = () => {
   //     ]
 
   return (
-    <div className="w-full pb-10 bg-[#f9f9f9]">
-      <div className="max-w-[1240px] mx-auto pt-4">
-        <div className="grid lg:grid-cols-3 md:gap-4 p-2">
-          <div className="col-span-3 p-1 bg-white rounded-xl">
+    <div className="w-full bg-[#f9f9f9] pb-10">
+      <div className="mx-auto max-w-[1240px] pt-4">
+        <div className="grid p-2 md:gap-4 lg:grid-cols-3">
+          <div className="col-span-3 rounded-xl bg-white p-1">
             <img src={imgPlaceholder} alt="Author Image" />
             <h1>{article.author.name}</h1>
             <div>{article.author.email}</div>
           </div>
-          <div className="col-span-3 lg:order-last lg:col-span-1 bg-white rounded-xl overflow-hidden drop-shadow-md pl-5 pt-5">
+          <div className="col-span-3 overflow-hidden rounded-xl bg-white pt-5 pl-5 drop-shadow-md lg:order-last lg:col-span-1">
             Index Outline
           </div>
           <div className="col-span-2 gap-2">
             <img
               src={"http://172.27.72.25:1337" + article.cover.url}
               alt="Image Cover Placeholderrr"
-              className="h-56 w-full object-cover bg-gray-300"
+              className="h-56 w-full bg-gray-300 object-cover"
             />
-            <h1 className="font-bold text-2xl my-1 pt-5">
+            <h1 className="my-1 pt-5 text-2xl font-bold">
               {article.title} {documentId}
             </h1>
-            <div className="pt-2 prose mx-auto my-10">
+            <div className="prose mx-auto my-10 pt-2">
               {/* <BlocksRenderer let content={content} /> */}
               <BlocksRenderer let content={article.content} />
             </div>

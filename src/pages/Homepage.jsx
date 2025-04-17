@@ -70,7 +70,7 @@ export default function Homepage() {
   // ]
 
   return (
-    <div className="w-full bg-[#f9f9f9] py-[50px]">
+    <div className="h-full bg-[#f9f9f9] py-[50px]">
       <div className="max-w-[1240px] mx-auto">
         <div className="m-4 rounded-xl bg-gray-300 flex flex-wrap justify-between">
           <div className="p-4 order-last lg:order-first">
