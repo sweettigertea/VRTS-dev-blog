@@ -109,7 +109,7 @@ export default function Homepage() {
         </div>
         <div className="relative px-4 wrap-anywhere">
           <div className="flex flex-wrap justify-between py-4">
-            <h2 className="text-3xl">Recent</h2>
+            <h2 className="text-3xl">Recent Articles:</h2>
             {/* <p>Sort by: Category</p> */}
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-black">
