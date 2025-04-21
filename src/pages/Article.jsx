@@ -1,5 +1,5 @@
 import React from "react";
-import { imgPlaceholder } from "../assets/exportAssets";
+// import { imgPlaceholder } from "../assets/exportAssets";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
@@ -93,24 +93,27 @@ const Article = () => {
     <div className="w-full bg-[#f9f9f9] pb-10">
       <div className="mx-auto max-w-[1240px] pt-4">
         <div className="flex flex-col space-y-6 items-center mx-3">
-          <div className="rounded-xl bg-white p-1">
-            <img src={imgPlaceholder} alt="Author Image" />
-            <h1>{article.author.name}</h1>
-            <div>{article.author.email}</div>
-          </div>
-          <div className="relative w-full rounded-xl bg-white p-2 drop-shadow-md">
+          {/* <div className="relative w-full rounded-xl bg-white p-2 drop-shadow-md">
             Index Outline
-          </div>
+          </div> */}
           <div className="">
             <img
               src={"http://172.27.72.25:1337" + article.cover.url}
               alt="Image Cover Placeholderrr"
-              className="h-56 w-full bg-gray-300 object-cover"
+              className="max-h-100 w-full bg-gray-300 object-cover"
             />
-            <h1 className="my-1 pt-5 text-2xl font-bold">
-              {article.title}
-            </h1>
-            <div className="prose mx-auto my-10 pt-2">
+              <div className="flex flex-wrap items-center py-4 pr-4">
+                <img src={"http://172.27.72.25:1337" + article.author.avatar.url} alt="Author Image" 
+                className="max-h-25 pr-4"/>
+                <div>
+                  <h1 className="text-xl">{article.author.name}</h1>
+                  <div>{article.author.email}</div>
+                </div>
+              </div>
+            <div className="prose pt-6">
+              <h1 className="text-2xl font-bold">
+                {article.title}
+              </h1>
               {/* <BlocksRenderer let content={content} /> */}
               <BlocksRenderer let content={article.content} />
             </div>

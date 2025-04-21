@@ -15,16 +15,20 @@ function Navbar() {
           </Link>
         </div>
 
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <ul className="hidden md:flex">
             <li className="mr-2">Categories</li>
             <li>Search</li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="hidden md:flex mr-3">
-          <img src={github} alt="Github Logo" className="h-[30px] p-1" />
-          <img src={linkedin} alt="LinkedIn Logo" className="h-[30px] p-1" />
+        <a href="https://github.com/sweettigertea">
+            <img src={github} alt="Github Logo" className="h-[30px] p-1" />
+          </a>
+          <a href="https://www.linkedin.com/in/sweettigertea/">
+            <img src={linkedin} alt="LinkedIn Logo" className="h-[30px] p-1" />
+          </a>
         </div>
 
         <div className="md:hidden" onClick={handleClick}>
@@ -45,8 +49,12 @@ function Navbar() {
         >
           <li>Categories</li>
           <li>Search</li>
-          <img src={github} alt="Github Logo" className="h-[30px] p-1" />
-          <img src={linkedin} alt="LinkedIn Logo" className="h-[30px] p-1" />
+          <a href="https://github.com/sweettigertea">
+            <img src={github} alt="Github Logo" className="h-[30px] p-1" />
+          </a>
+          <a href="https://www.linkedin.com/in/sweettigertea/">
+            <img src={linkedin} alt="LinkedIn Logo" className="h-[30px] p-1" />
+          </a>
         </ul>
       </div>
     </div>

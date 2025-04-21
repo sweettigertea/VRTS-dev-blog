@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import { imgPlaceholder } from "../assets/exportAssets";
+// import { imgPlaceholder } from "../assets/exportAssets";
+import { sttAvatar } from "../assets/exportAssets";
 
 const GET_ARTICLES = gql`
   query GetArticles {
@@ -72,12 +73,12 @@ export default function Homepage() {
   return (
     <div className="h-full bg-[#f9f9f9] py-[20px]">
       <div className="max-w-[1240px] mx-auto p-4 flex flex-col space-y-6">
-        <div className="flex flex-col items-center rounded-xl bg-gray-300 p-4 space-y-6 wrap-anywhere">
-          <div>
+        <div className="flex flex-col items-center px-4 space-y-6 wrap-anywhere">
+          <div className="flex" >
             <img
-              src={imgPlaceholder}
+              src={sttAvatar}
               alt="User Profile Picture"
-              className="h-60 rounded-xl"
+              className="max-h-80 rounded-xl"
             />
           </div>
           <div>
@@ -88,10 +89,10 @@ export default function Homepage() {
             </p>
           </div>
         </div>
-        <div className="relative rounded-xl bg-gray-300 px-4 wrap-anywhere">
-          <div className="flex justify-between py-4">
+        <div className="relative px-4 wrap-anywhere">
+          <div className="flex flex-wrap justify-between py-4">
             <h2 className="text-3xl">Recent</h2>
-            <p>Sort by: Category</p>
+            {/* <p>Sort by: Category</p> */}
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-black">
             {data.articles.map((article) => (
@@ -103,14 +104,14 @@ export default function Homepage() {
                   <img
                     src={"http://172.27.72.25:1337" + article.cover.url}
                     alt="Image Placeholdersss"
-                    className="h-56 w-full object-cover"
+                    className="max-h-56 w-full object-cover"
                   />
                   <div className="p-8">
                     <h3 className="font-bold text-2xl my-1">{article.title}</h3>
                     <p className="text-gray-600 text-xl">
                       {article.description}
                     </p>
-                    <div className="flex">
+                    <div className="pt-2">
                       <span className="font-semibold">
                         {article.author.name}
                       </span>
