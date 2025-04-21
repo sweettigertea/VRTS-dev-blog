@@ -92,7 +92,7 @@ export default function Homepage() {
 
 	            <p>
                 Beyond professional achievements, I take pride in continuously learning and growing both 
-                personally and professionally. My capstone project on a hybrid-Agile software development 
+                personally and professionally. My capstone project using the hybrid-Agile software development 
                 life-cycle demonstrates my ability to combine technical expertise with innovative thinking, 
                 while my home-lab setup with Proxmox, Docker, Nginx, Nextcloud, and others showcase my commitment 
                 and dedication to learning and keeping up with cutting-edge technologies for personal and professional development.

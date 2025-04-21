@@ -100,7 +100,7 @@ const Article = () => {
             <img
               src={"http://172.27.72.25:1337" + article.cover.url}
               alt="Image Cover Placeholderrr"
-              className="max-h-100 w-full bg-gray-300 object-cover rounded-md"
+              className="max-h-100 w-full bg-gray-300 object-cover rounded-lg"
             />
             <h1 className="text-3xl font-bold mt-4">{article.title}</h1>
               <div className="flex flex-wrap items-center space-x-4 mt-4">
