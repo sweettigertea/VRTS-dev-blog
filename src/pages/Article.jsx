@@ -100,20 +100,22 @@ const Article = () => {
             <img
               src={"http://172.27.72.25:1337" + article.cover.url}
               alt="Image Cover Placeholderrr"
-              className="max-h-100 w-full bg-gray-300 object-cover"
+              className="max-h-100 w-full bg-gray-300 object-cover rounded-md"
             />
-              <div className="flex flex-wrap items-center py-4 pr-4">
-                <img src={"http://172.27.72.25:1337" + article.author.avatar.url} alt="Author Image" 
-                className="max-h-25 pr-4"/>
+            <h1 className="text-3xl font-bold mt-4">{article.title}</h1>
+              <div className="flex flex-wrap items-center space-x-4 mt-4">
+                <img 
+                  src={"http://172.27.72.25:1337" + article.author.avatar.url} 
+                  alt={article.author.name}
+                  className="size-20 rounded-lg object-cover"
+                />
                 <div>
-                  <h1 className="text-xl">{article.author.name}</h1>
-                  <div>{article.author.email}</div>
+                  <h2 className="text-xl font-semibold">{article.author.name}</h2>
+                  <p className="text-gray-600">{article.author.email}</p>
+                  <p className="text-sm text-gray-500 mt-1">{article.author.description}</p>
                 </div>
-              </div>
-            <div className="prose pt-6">
-              <h1>
-                {article.title}
-              </h1>
+            </div>
+            <div className="prose max-w-3xl pt-6">
               {/* <BlocksRenderer let content={content} /> */}
               <BlocksRenderer let content={article.content} />
             </div>

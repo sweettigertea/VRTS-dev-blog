@@ -122,15 +122,20 @@ export default function Homepage() {
                   <img
                     src={"http://172.27.72.25:1337" + article.cover.url}
                     alt="Image Placeholdersss"
-                    className="max-h-56 w-full object-cover"
+                    className="max-h-48 w-full object-cover"
                   />
                   <div className="p-8">
-                    <h3 className="font-bold text-2xl my-1">{article.title}</h3>
-                    <p className="text-gray-600 text-xl">
+                    <h3 className="font-bold text-xl my-1">{article.title}</h3>
+                    <p className="text-gray-600">
                       {article.description}
                     </p>
-                    <div className="pt-2">
-                      <span className="font-semibold">
+                    <div className="flex items-center pt-4">
+                      <img
+                        src={"http://172.27.72.25:1337" + article.author.avatar.url}
+                        alt={article.author.name}
+                        className="w-8 h-8 rounded-full mr-2"
+                      />
+                      <span>
                         {article.author.name}
                       </span>
                     </div>

@@ -23,7 +23,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Homepage />} />
             <Route path="/articles/:documentId" element={<Article />} />
-            <Route path="/categories/:documentID" element={<Category />} />
+            <Route path="/categories/:documentId" element={<Category />} />
           </Routes>
           <Footer />
         </div>

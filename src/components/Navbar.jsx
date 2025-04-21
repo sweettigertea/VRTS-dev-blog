@@ -7,7 +7,7 @@ function Navbar() {
   const handleClick = () => setToggleMenuOpen(!toggleMenuOpen);
 
   return (
-    <div className="bg-white drop-shadow-lg relative">
+    <div className="bg-white drop-shadow-lg sticky top-0 z-1">
       <div className="max-w-screen-xl flex flex-wrap justify-between items-center w-full h-full mx-auto p-3">
         <div>
           <Link to="/">
@@ -47,8 +47,8 @@ function Navbar() {
               : "hidden"
           }
         >
-          <li>Categories</li>
-          <li>Search</li>
+          {/* <li>Categories</li>
+          <li>Search</li> */}
           <a href="https://github.com/sweettigertea">
             <img src={github} alt="Github Logo" className="h-[30px] p-1" />
           </a>
