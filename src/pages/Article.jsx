@@ -111,7 +111,7 @@ const Article = () => {
                 </div>
               </div>
             <div className="prose pt-6">
-              <h1 className="text-2xl font-bold">
+              <h1>
                 {article.title}
               </h1>
               {/* <BlocksRenderer let content={content} /> */}
