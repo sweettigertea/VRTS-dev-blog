@@ -118,18 +118,18 @@ export default function Homepage() {
                 key={article.documentId}
                 to={`/articles/${article.documentId}`}
               >
-                <div className="bg-white rounded-xl overflow-hidden drop-shadow-md">
+                <div className="bg-white rounded-xl overflow-hidden drop-shadow-md h-[380px]">
                   <img
                     src={"http://172.27.72.25:1337" + article.cover.url}
                     alt="Image Placeholdersss"
-                    className="max-h-48 w-full object-cover"
+                    className="h-48 w-full object-cover"
                   />
-                  <div className="p-8">
-                    <h3 className="font-bold text-xl my-1">{article.title}</h3>
-                    <p className="text-gray-600">
+                  <div className="p-4">
+                    <h3 className="font-bold text-xl my-1 line-clamp-2">{article.title}</h3>
+                    <p className="text-gray-600 line-clamp-2">
                       {article.description}
                     </p>
-                    <div className="flex items-center pt-4">
+                    <div className="flex items-center pt-4 absolute bottom-4">
                       <img
                         src={"http://172.27.72.25:1337" + article.author.avatar.url}
                         alt={article.author.name}
