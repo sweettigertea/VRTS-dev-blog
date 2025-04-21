@@ -100,7 +100,7 @@ export default function Homepage() {
 
               </div>
 
-              <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 my-4 rounded-md shadow-md">
+              <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mt-8 rounded-md shadow-md">
                 <p className="font-bold">Alert:</p>
                 <p>This site is still currently in development. Expect some errorrrs!</p>
               </div>
@@ -112,7 +112,7 @@ export default function Homepage() {
             <h2 className="text-3xl">Recent Articles:</h2>
             {/* <p>Sort by: Category</p> */}
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 text-black">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-black">
             {data.articles.map((article) => (
               <Link
                 key={article.documentId}
