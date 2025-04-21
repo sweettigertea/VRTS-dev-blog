@@ -83,10 +83,28 @@ export default function Homepage() {
           </div>
           <div>
             <h1 className="text-4xl">SweetTigerTea's DevBlog</h1>
-            <p className="mt-4">
-              Welcome to SweetTigerTea's blog. Find the latest news, articles,
-              and tips from our team.
-            </p>
+            <div className="mt-4 prose">
+
+              <p>
+                A passionate Computer Science student with a strong foundation in technology 
+                and its potential to drive positive change. 
+              </p>
+
+	            <p>
+                Beyond professional achievements, I take pride in continuously learning and growing both 
+                personally and professionally. My capstone project on a hybrid-Agile software development 
+                life-cycle demonstrates my ability to combine technical expertise with innovative thinking, 
+                while my home-lab setup with Proxmox, Docker, Nginx, Nextcloud, and others showcase my commitment 
+                and dedication to learning and keeping up with cutting-edge technologies for personal and professional development.
+              </p>
+
+              </div>
+
+              <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 my-4 rounded-md shadow-md">
+                <p className="font-bold">Alert:</p>
+                <p>This site is still currently in development. Expect some errorrrs!</p>
+              </div>
+
           </div>
         </div>
         <div className="relative px-4 wrap-anywhere">
