@@ -115,7 +115,7 @@ const Article = () => {
                   <p className="text-sm text-gray-500 mt-1">{article.author.description}</p>
                 </div>
             </div>
-            <div className="prose max-w-3xl pt-6">
+            <div className="prose max-w-3xl pt-6 wrap-anywhere">
               {/* <BlocksRenderer let content={content} /> */}
               <BlocksRenderer let content={article.content} />
             </div>
