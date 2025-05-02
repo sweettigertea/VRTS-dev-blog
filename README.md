@@ -1,5 +1,3 @@
-**File: /README.md**
-```markdown
 # DevBlog
 
 DevBlog is a modern blogging platform built with React and Strapi, designed to provide a seamless experience for both developers and readers.
