@@ -91,11 +91,15 @@ export default function Homepage() {
               </p>
 
 	            <p>
-                Beyond professional achievements, I take pride in continuously learning and growing both 
+                I take pride in continuously learning and growing both 
                 personally and professionally. My capstone project using the hybrid-Agile software development 
                 life-cycle demonstrates my ability to combine technical expertise with innovative thinking, 
                 while my home-lab setup with Proxmox, Docker, Nginx, Nextcloud, and others showcase my commitment 
                 and dedication to learning and keeping up with cutting-edge technologies for personal and professional development.
+              </p>
+
+              <p>
+                Please browse around the blog to discover articles and insights on various topics related to computer science, technology, and development!
               </p>
 
               </div>
