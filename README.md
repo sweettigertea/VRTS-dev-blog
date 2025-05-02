@@ -1,96 +1,70 @@
-# React + Vite, TailwindCSS, Strapi
-
-This project is a modern web application that combines React for the frontend, Vite as the build tool, TailwindCSS for styling, and Strapi as the headless CMS.
-
-## Features
-
-- Fast development with Vite
-- Responsive design using TailwindCSS
-- Content management with Strapi
-- React for building user interfaces
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (version 14 or later)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-  git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
-
-2. Install dependencies:
-npm install
-
-
-3. Start the development server:
-   npm run dev
-
-Certainly! I'll create a brief README file for your project based on the information provided. Here's a suggested README content:
-
-**File: /blog/devblog/README.md**
+**File: /README.md**
 ```markdown
-# React + Vite, TailwindCSS, Strapi
+# DevBlog
 
-This project is a modern web application that combines React for the frontend, Vite as the build tool, TailwindCSS for styling, and Strapi as the headless CMS.
-
-## Features
-
-- Fast development with Vite
-- Responsive design using TailwindCSS
-- Content management with Strapi
-- React for building user interfaces
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (version 14 or later)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-   ```
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
-   ```
-
-2. Install dependencies:
-   ```
-   npm install
-   ```
-
-3. Start the development server:
-   ```
-   npm run dev
-   ```
-
-4. Open your browser and visit `http://localhost:5173`
+DevBlog is a modern blogging platform built with React and Strapi, designed to provide a seamless experience for both developers and readers.
 
 ## Project Structure
 
-- `/src`: React components and pages
-- `/public`: Static assets
-- `/devblog-cms`: Strapi CMS configuration and content types
+This project consists of two main parts:
 
-## Scripts
+1. `devblog`: The frontend application built with React
+2. `devblog-cms`: The backend CMS powered by Strapi
 
-- `npm run dev`: Start the development server
-- `npm run build`: Build for production
-- `npm run preview`: Preview the production build locally
+## Getting Started
 
-## Learn More
+### Prerequisites
 
-- [React Documentation](https://reactjs.org/)
-- [Vite Documentation](https://vitejs.dev/)
-- [TailwindCSS Documentation](https://tailwindcss.com/)
-- [Strapi Documentation](https://strapi.io/documentation)
+- Node.js (version specified in `devblog-cms/package.json`)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/devblog.git
+   cd devblog
+   ```
+
+2. Install dependencies for the frontend:
+   ```
+   cd devblog
+   npm install
+   ```
+
+3. Install dependencies for the CMS:
+   ```
+   cd ../devblog-cms
+   npm install
+   ```
+
+### Running the Application
+
+1. Start the Strapi CMS:
+   ```
+   cd devblog-cms
+   npm run develop
+   ```
+
+2. In a new terminal, start the frontend application:
+   ```
+   cd devblog
+   npm run dev
+   ```
+
+3. Open your browser and navigate to `http://localhost:5173` to view the application.
+
+## Features
+
+- Modern, responsive design
+- GraphQL API powered by Strapi
+- React-based frontend for optimal performance
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 ```
