@@ -1,13 +1,25 @@
 # DevBlog
 
-DevBlog is a modern blogging platform built with React and Strapi, designed to provide a seamless experience for both developers and readers.
+DevBlog is a modern blogging platform built with Vite, React, TailwindCSS, and Strapi, designed to provide a seamless experience for both developers and readers.
 
 ## Project Structure
 
 This project consists of two main parts:
 
-1. `devblog`: The frontend application built with React
+1. `devblog`: The frontend application built with Vite, React, and TailwindCSS
 2. `devblog-cms`: The backend CMS powered by Strapi
+
+## Technologies Used
+
+- **Frontend:**
+  - Vite: Next Generation Frontend Tooling
+  - React: A JavaScript library for building user interfaces
+  - TailwindCSS: A utility-first CSS framework
+  - Apollo Client: For GraphQL queries
+
+- **Backend:**
+  - Strapi: Headless CMS
+  - GraphQL: Query language for APIs
 
 ## Getting Started
 
@@ -44,7 +56,7 @@ This project consists of two main parts:
    npm run develop
    ```
 
-2. In a new terminal, start the frontend application:
+2. In a new terminal, start the Vite development server for the frontend:
    ```
    cd devblog
    npm run dev
@@ -54,7 +66,8 @@ This project consists of two main parts:
 
 ## Features
 
-- Modern, responsive design
+- Modern, responsive design with TailwindCSS
+- Fast development and build times with Vite
 - GraphQL API powered by Strapi
 - React-based frontend for optimal performance
 
