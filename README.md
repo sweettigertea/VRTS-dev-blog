@@ -32,7 +32,7 @@ This project consists of two main parts:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/devblog.git
+   git clone https://github.com/sweettigertea/VRTS-dev-blog.git
    cd devblog
    ```
 
