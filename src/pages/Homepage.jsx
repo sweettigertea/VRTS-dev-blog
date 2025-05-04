@@ -4,6 +4,7 @@ import { useQuery, gql } from "@apollo/client";
 // import { imgPlaceholder } from "../assets/exportAssets";
 import { sttAvatar } from "../assets/exportAssets";
 
+// GraphQL query to fetch articles data
 const GET_ARTICLES = gql`
   query GetArticles {
     articles {
@@ -27,8 +28,10 @@ const GET_ARTICLES = gql`
 `;
 
 export default function Homepage() {
+  // Execute the GraphQL query
   const { loading, error, data } = useQuery(GET_ARTICLES);
 
+  // Handle loading and error states
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Errorrr...</p>;
   if (!data) return null;
@@ -37,6 +40,7 @@ export default function Homepage() {
   // console.log(ArticlesTest)
   // console.log('gql')
   console.log(data.articles);
+
   // const articles=[
   //     {
   //         'id':1,
@@ -74,6 +78,7 @@ export default function Homepage() {
     <div className="h-full bg-[#f9f9f9] py-[20px]">
       <div className="max-w-[1240px] mx-auto p-4 flex flex-col space-y-6">
         <div className="flex flex-col items-center px-4 space-y-6 wrap-anywhere">
+          {/* Author profile section */}
           <div className="flex" >
             <img
               src={sttAvatar}
@@ -85,6 +90,7 @@ export default function Homepage() {
             <h1 className="text-4xl">SweetTigerTea's DevBlog</h1>
             <div className="mt-4 prose">
 
+              {/* Author bio */}
               <p>
                 A passionate Computer Science student with a strong foundation in technology 
                 and its potential to drive positive change. 
@@ -104,35 +110,44 @@ export default function Homepage() {
 
               </div>
 
+              {/* Development alert */}
               <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 mt-8 rounded-md shadow-md">
                 <p className="font-bold">Alert:</p>
                 <p>This site is still currently in development. Expect some errorrrs!</p>
               </div>
-
           </div>
         </div>
+
+        {/* Recent articles section */}
         <div className="relative px-4 wrap-anywhere">
           <div className="flex flex-wrap justify-between py-4">
             <h2 className="text-3xl">Recent Articles:</h2>
+            {/* Placeholder for future sorting functionality */}
             {/* <p>Sort by: Category</p> */}
           </div>
+          {/* Grid of article cards */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 text-black">
             {data.articles.map((article) => (
               <Link
                 key={article.documentId}
                 to={`/articles/${article.documentId}`}
               >
+                {/* Article card */}
                 <div className="bg-white rounded-xl overflow-hidden drop-shadow-md h-[380px]">
+                  {/* Article cover image */}
                   <img
                     src={"http://172.27.72.25:1337" + article.cover.url}
                     alt="Image Placeholdersss"
                     className="h-48 w-full object-cover"
                   />
                   <div className="p-4">
+                    {/* Article title */}
                     <h3 className="font-bold text-xl my-1 line-clamp-2">{article.title}</h3>
+                    {/* Article description */}
                     <p className="text-gray-600 line-clamp-2">
                       {article.description}
                     </p>
+                    {/* Author info */}
                     <div className="flex items-center pt-4 absolute bottom-4">
                       <img
                         src={"http://172.27.72.25:1337" + article.author.avatar.url}
