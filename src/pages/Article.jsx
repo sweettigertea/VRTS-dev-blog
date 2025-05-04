@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
+// GraphQL query to fetch article details
 const GET_ARTICLE = gql`
   query GetArticle($documentId: ID!) {
     article(documentId: $documentId) {
@@ -28,11 +29,14 @@ const GET_ARTICLE = gql`
 `;
 
 const Article = () => {
+  // Extract documentId from URL parameters
   const { documentId } = useParams();
+  // Fetch article data using Apollo Client
   const { loading, error, data } = useQuery(GET_ARTICLE, {
     variables: { documentId: documentId },
   });
 
+  // Handle loading and error states
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Errorrr...</p>;
   if (!data) return null;
@@ -45,9 +49,9 @@ const Article = () => {
   //   article={}
   // }
 
+  // Extract article data from the query result
   let article = data.article;
-  console.log("Article Details");
-  console.log(article);
+  console.log("Article Details", article);
 
   // const content = [
   //   {
@@ -97,12 +101,15 @@ const Article = () => {
             Index Outline
           </div> */}
           <div className="">
+            {/* Article cover image */}
             <img
               src={"http://172.27.72.25:1337" + article.cover.url}
               alt="Image Cover Placeholderrr"
               className="max-h-100 w-full bg-gray-300 object-cover rounded-lg"
             />
+            {/* Article title */}
             <h1 className="text-3xl font-bold mt-4">{article.title}</h1>
+              {/* Author information */}
               <div className="flex flex-wrap items-center space-x-4 mt-4">
                 <img 
                   src={"http://172.27.72.25:1337" + article.author.avatar.url} 
@@ -115,6 +122,7 @@ const Article = () => {
                   <p className="text-sm text-gray-500 mt-1">{article.author.description}</p>
                 </div>
             </div>
+            {/* Article content */}
             <div className="prose max-w-3xl pt-6 prose-p:wrap-anywhere prose-p:indent-4">
               {/* <BlocksRenderer let content={content} /> */}
               <BlocksRenderer let content={article.content} />
