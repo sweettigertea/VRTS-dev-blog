@@ -1,2 +1,4 @@
 @import "tailwindcss";
+
+/* Enable the official Tailwind CSS Typography plugin */
 @plugin "@tailwindcss/typography";
