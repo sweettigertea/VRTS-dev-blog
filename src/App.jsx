@@ -10,13 +10,7 @@ import { Homepage, Article, Category } from "./pages/exportPages";
 // import useFetch from './hooks/useFetch';
 
 function App() {
-  // Commented out code for fetching data using useFetch hook
-  // let {loading, error, data} = useFetch('http://172.27.72.25:1337/api/articles?populate=*')
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Errorrr...</p>;
-  // if (!data) return null;
 
-  
   const client = new ApolloClient({
     uri: "http://172.27.72.25:1337/graphql",
     cache: new InMemoryCache(),
